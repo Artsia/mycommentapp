@@ -130,7 +130,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### Continued development
 
-- Will focus more on react hooks usecases. I plan on creating the Youtube comment section where users can make live comments, see what other users justed commeted and edit/ delete their post. 
+- Will focus more on react hooks usecases. I plan on creating the Youtube comment section where users can make live comments, see what other users just commeted and edit/ delete their own post. 
 
 
 ### Useful resources
@@ -143,7 +143,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Author
 
 - Website - [Phillip Kataswa](https://phillipkataswa.live/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Artsia)
+- Frontend Mentor - [@Artsia](https://www.frontendmentor.io/profile/Artsia)
 
 
 
