@@ -1,0 +1,56 @@
+/**contains all containers*/
+.center-Wrapper-Dell-Edit-Card{
+    border: 2px solid rgb(0, 0, 0);
+    width:auto;
+    margin:10% ;
+    border: none;
+}
+
+/**/
+
+/*moves Wrapper class content in center*/
+.center-Wrapper{
+    display: flex;
+    justify-content: center;
+    height:150px;
+    align-items: center;
+    width: auto;
+    margin-top:20px;
+
+}
+
+/*align items on hor. axis with space around each component in the Wrapper class container**/
+
+.Wrapper{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 875px;
+    margin:0px 10% ;
+}
+
+.Wrapper .space-element{
+    margin:0px 5px ;
+}
+
+
+.newPost{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 15px 10%;
+
+}
+
+
+
+.newPost .new-TextField{
+     margin:0px 5px ;
+}
+
+.newPost .space-element{
+     margin:0px 5px ;
+}
