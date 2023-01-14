@@ -25,16 +25,13 @@ Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
-- Create, Read, Update, and Delete comments and replies
+- Perform comment CRUD operations.
 - Upvote and downvote comments
-- **Bonus**: If you're building a purely front-end project, use `localStorage` to save the current state in the browser that persists when the browser is refreshed.
-- **Bonus**: Instead of using the `createdAt` strings from the `data.json` file, try using timestamps and dynamically track the time since the comment or reply was posted.
-
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: (https://github.com/Artsia/mycommentapp)
+- Live Site URL: (https://commentjs.netlify.app/)
 
 ## Use Code
 
@@ -130,7 +127,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### Continued development
 
-- Will focus more on react hooks usecases. I plan on creating the Youtube comment section where users can make live comments, see what other users justed commeted and edit/ delete their post. 
+- Will focus more on react hooks usecases. I plan on creating the Youtube comment section where users can make live comments, see what other users just commeted and edit/ delete their own post. 
 
 
 ### Useful resources
@@ -143,7 +140,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Author
 
 - Website - [Phillip Kataswa](https://phillipkataswa.live/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Artsia)
+- Frontend Mentor - [@Artsia](https://www.frontendmentor.io/profile/Artsia)
 
 
 
