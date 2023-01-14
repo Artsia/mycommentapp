@@ -12,6 +12,8 @@ import Button from '@mui/material/Button';
 // eslint-disable-next-line 
 import Input from "@mui/material/Input";
 
+
+
 /**Convert json to javascript object 
 let db =  '../DataBase/data.json';
 let preDefinedComments = JSON.parse(db);
@@ -24,16 +26,45 @@ console.log(contentOne)*/
 function CreateCard() {
     const inputRef = useRef(null);
     const [comments, setComments] = useState([]);
+
+    let [count, setCount] = useState(0);
+    const upDowntTextFieldRef = useRef(null);
+
+    /* const oneMinuteAgoRef = useRef(null);
+     let [time, setTime] = useRef(null);*/
+
     // eslint-disable-next-line
 
+    const increaseCount = () => {
+        setCount(count, upDowntTextFieldRef.current.value);
+        upDowntTextFieldRef.current.value = count + 1;
 
-   
+    }
+
+    const decreaseCount = () => {
+        /*if (upDowntTextFieldRef.current.value === 0) {
+            setCount(count, upDowntTextFieldRef.current.value);
+            upDowntTextFieldRef.current.value = count - 1;
+        }*/
+
+        setCount(count, upDowntTextFieldRef.current.value);
+        count = upDowntTextFieldRef.current.value;
+        upDowntTextFieldRef.current.value = count - 1;
+    }
+
+
+    /*const updateTime = () => {
+       setTime(time,oneMinuteAgoRef.current.value);
+        /*moment().endOf('day').fromNow(); 
+    }*/
+
+
     const addComment = () => {
         setComments([...comments, inputRef.current.value]);
         inputRef.current.value = '';
     }
 
-    
+
     const removeComment = (index) => {
         setComments(comments.filter((_, i) => i !== index));
     }
@@ -47,38 +78,76 @@ function CreateCard() {
     return (
         <Card className="center-Wrapper-Dell-Edit-Card">
             {comments.map((comment, index) => (
-                <Card key={index} className="newPost">
-                    <Avatar
-                        src=''
-                        alt=''
-                        className="space-element"
-                    />
+                <Card key={index} className="newPost" >
 
-                    <TextField className="new-TextField"
-                        value={comment}
-                        variant="outlined"
-                        multiline
-                        fullWidth
-                        InputProps={{
-                            readOnly: true,
-                        }}
+                    <Card className="UpDown-vote">
+                        <Button
+                            variant="text"
+                            onClick={() => increaseCount()}
+                            sx={{ height: 75 }}
+                        >
+                            +
+                        </Button>
 
-                        sx={{ width: 200 }}
-                    />
+                        <TextField
+                            value={0}
+                            sx={{ width: 75 }}
+                            ref={upDowntTextFieldRef}
+                        />
 
-                    <Button
-                        className="space-element"
-                        variant="contained"
-                        onClick={() => removeComment(index)}>
-                        Delete
-                    </Button>
+                        <Button
+                            variant="text"
+                            onClick={() => decreaseCount()}
+                            sx={{ height: 75 }}
+                        >
+                            -
+                        </Button>
 
-                    <Button
-                        className="space-element"
-                        variant="contained"
-                        onClick={() => editComment(index, prompt('New Comment'))}>
-                        Edit
-                    </Button>
+                    </Card>
+
+                    <Card className="delete-edit-you-txtfield-container">
+                        <Card className="delete-edit-you-container">
+                            <Avatar
+                                src=''
+                                alt=''
+                                className="space-element"
+                            />
+
+                            <Button
+                                variant="contained"
+                            >YOU
+                            </Button>
+
+                            <Button
+                                className="space-element"
+                                variant="contained"
+                                onClick={() => removeComment(index)}>
+                                Delete
+                            </Button>
+
+                            <Button
+                                className="space-element"
+                                variant="contained"
+                                onClick={() => editComment(index, prompt('New Comment'))}>
+                                Edit
+                            </Button>
+                        </Card>
+
+                        <Card className="txtfield-container">
+                            <TextField className="new-TextField"
+                                value={comment}
+                                variant="outlined"
+                                multiline
+                                fullWidth
+                                InputProps={{
+                                    readOnly: true
+                                }}
+                            />
+                        </Card>
+
+                    </Card>
+
+
                 </Card>
             ))}
 
