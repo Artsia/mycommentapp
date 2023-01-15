@@ -137,7 +137,7 @@ function CreateCard() {
                             <TextField className="new-TextField"
                                 value={comment}
                                 variant="outlined"
-                                multiline
+                               
                                 fullWidth
                                 InputProps={{
                                     readOnly: true
@@ -162,11 +162,13 @@ function CreateCard() {
 
                     <TextField
                         className="space-element"
+                        id='posttxtfield'
                         placeholder="Add a comment"
                         inputRef={inputRef}
                         variant="outlined"
                         multiline
                         sx={{ width: 300 }}
+                       
                     />
 
                     <Button
