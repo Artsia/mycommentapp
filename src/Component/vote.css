@@ -1,0 +1,35 @@
+.voteContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: space-around;
+    border-radius: 10%;
+    height: 100px;
+    width: 30px;
+    border:1px solid hsl(223, 19%, 93%);
+
+}
+
+.btn{
+    width: 30px;
+    height: 30px;
+    background-color:hsl(223, 19%, 93%);
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(212, 24%, 26%);
+    cursor:pointer;
+    border-radius: 10%;
+    
+    
+}
+
+.display{
+    width: 30px;
+    height: 40px;
+    background-color:hsl(223, 19%, 93%);
+    border:none;
+    text-align: center;
+    
+
+}
+

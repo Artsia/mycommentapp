@@ -1,0 +1,74 @@
+* {
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.three-Items-Container {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    height: 200px;
+    /**/
+}
+
+.two-Items-Container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.two-item-space-betweencontainer {
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+
+}
+
+.four-items-space-evenly {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+    /*border: 1px solid black;*/
+}
+
+.you {
+    color: white;
+    background-color: hsl(238, 40%, 52%);
+    border-radius: 10%;
+}
+
+.date {
+    color: rgb(158, 155, 155);
+}
+
+.flex {
+    display: flex;
+    width: 250px;
+    height: 50px;
+}
+
+.reply-Container {
+    display: flex;
+    justify-content:  space-around;
+    align-items: center;
+    width: 250px;
+}
+
+.replyBtn {
+    border: none;
+    background-color: white;
+    color: rgb(53, 53, 156);
+}
+
+.txtField-container {
+    width: 750px;
+    height: 100px;
+}
+
+.txtField {
+    border: none;
+    
+}

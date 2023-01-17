@@ -1,4 +1,7 @@
 import './body.css';
+import './vote.css';
+import C from './comment';
+import R from './commentReply';
 
 import React, { useState, useRef } from 'react';
 // eslint-disable-next-line 
@@ -14,15 +17,6 @@ import Input from "@mui/material/Input";
 
 
 
-/**Convert json to javascript object 
-let db =  '../DataBase/data.json';
-let preDefinedComments = JSON.parse(db);
-let contentOne = preDefinedComments.comments[0].content;
-console.log(contentOne)*/
-
-
-
-
 function CreateCard() {
     const inputRef = useRef(null);
     const [comments, setComments] = useState([]);
@@ -30,9 +24,12 @@ function CreateCard() {
     let [count, setCount] = useState(0);
     const upDowntTextFieldRef = useRef(null);
 
-    /* const oneMinuteAgoRef = useRef(null);
-     let [time, setTime] = useRef(null);*/
+    /**reference for editCommentContainer div where I store Edited response */
 
+    const editCommentContainerUseRef = useRef(null);
+    
+
+    
     // eslint-disable-next-line
 
     const increaseCount = () => {
@@ -52,13 +49,6 @@ function CreateCard() {
         upDowntTextFieldRef.current.value = count - 1;
     }
 
-
-    /*const updateTime = () => {
-       setTime(time,oneMinuteAgoRef.current.value);
-        /*moment().endOf('day').fromNow(); 
-    }*/
-
-
     const addComment = () => {
         setComments([...comments, inputRef.current.value]);
         inputRef.current.value = '';
@@ -75,107 +65,126 @@ function CreateCard() {
         setComments(newComments);
     }
 
+
+
     return (
         <Card className="center-Wrapper-Dell-Edit-Card">
             {comments.map((comment, index) => (
-                <Card key={index} className="newPost" >
+                <div key={index} className="newPost" >
 
-                    <Card className="UpDown-vote">
-                        <Button
+                    <div className="voteContainer">
+                        {/**section uses comment.css file style class */}
+                        <button
+                            className='btn'
                             variant="text"
                             onClick={() => increaseCount()}
-                            sx={{ height: 75 }}
+
                         >
                             +
-                        </Button>
+                        </button>
 
-                        <TextField
-                            value={0}
-                            sx={{ width: 75 }}
-                            ref={upDowntTextFieldRef}
-                        />
+                        <div className='display'>5</div>
 
-                        <Button
+                        <button
+                            className='btn'
                             variant="text"
                             onClick={() => decreaseCount()}
-                            sx={{ height: 75 }}
+
                         >
                             -
-                        </Button>
+                        </button>
 
-                    </Card>
+                    </div>
 
-                    <Card className="delete-edit-you-txtfield-container">
-                        <Card className="delete-edit-you-container">
-                            <Avatar
-                                src=''
-                                alt=''
-                                className="space-element"
-                            />
+                    <div className="delete-edit-you-txtfield-container">
+                        <div className="delete-edit-you-container">
+                            <div className="four-items-space-evenly ">
+                                <Avatar src='./images/avatars/image-maxblagun.png' alt="poster" />
+                                <div className="names">maxblagun</div>
+                                <div className="you">You</div>
+                                <div className="date">2 weeks ago</div>
+                            </div>
 
-                            <Button
-                                variant="contained"
-                            >YOU
-                            </Button>
+                            <div className="flex">
 
-                            <Button
-                                className="space-element"
-                                variant="contained"
-                                onClick={() => removeComment(index)}>
-                                Delete
-                            </Button>
+                                <div className='del-Container'>
+                                    <Avatar src="./images/icon-delete.svg"
+                                        alt='delete icon'
+                                    />
+                                    <Button
+                                        className='delBtn'
+                                        variant="text"
+                                        sx={{
+                                            color: 'red'
+                                        }}
+                                        onClick={() => removeComment(index)}>
+                                        Delete
+                                    </Button>
+                                </div>
 
-                            <Button
-                                className="space-element"
-                                variant="contained"
-                                onClick={() => editComment(index, prompt('New Comment'))}>
-                                Edit
-                            </Button>
-                        </Card>
+                                <div className='edit-Container'>
+                                    <Avatar src='./images/icon-edit.svg' alt='edit icon' />
 
-                        <Card className="txtfield-container">
+                                    <Button
+                                        className='editBtn'
+                                        variant="text"
+                                        onClick={() => editComment(index, prompt('New Comment'))}>
+                                        {/** onClick={() => editComment(index, editCommentContainerUseRef)}>  */}
+                                        Edit
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="txtfield-container">
                             <TextField className="new-TextField"
                                 value={comment}
                                 variant="outlined"
-                               
+
                                 fullWidth
                                 InputProps={{
                                     readOnly: true
                                 }}
                             />
-                        </Card>
+                        </div>
 
-                    </Card>
+                        {/**display content when user clicks edit btn:here */}
 
+                        <div className="editCommentContainer" ref={editCommentContainerUseRef}>
 
-                </Card>
+                        </div>
+
+                    </div>
+                </div>
             ))}
 
             <Card className="center-Wrapper">
+
+
+                <R />
+
+                <C /> 
+
+                {/**put component design copy */}
+
                 <Card className="Wrapper">
                     <Avatar
                         src=''
                         alt="avatar"
-                        className="space-element"
-
                     />
 
-                    <TextField
-                        className="space-element"
+                    <input
+                        className="wrapperInput"
                         id='posttxtfield'
                         placeholder="Add a comment"
-                        inputRef={inputRef}
-                        variant="outlined"
-                        multiline
-                        sx={{ width: 300 }}
-                       
+                        ref={inputRef}
                     />
 
                     <Button
-                        className="space-element"
+
                         variant="contained"
                         onClick={addComment}>
-                        Post
+                        SEND
                     </Button>
                 </Card>
             </Card>
