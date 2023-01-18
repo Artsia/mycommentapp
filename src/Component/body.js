@@ -16,7 +16,7 @@ import Button from '@mui/material/Button';
 function CreateCard() {
     const inputRef = useRef(null);
     const [comments, setComments] = useState([]);
-    let [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
 
     const addComment = () => {
         setComments([...comments, inputRef.current.value]);

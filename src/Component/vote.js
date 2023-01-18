@@ -2,20 +2,20 @@ import './vote.css';
 import React, { useState } from 'react';
 
 function Vote() {
-    const [count, setCount] = useState(2);
+    const [countT, setCountT] = useState(2);
     return (
         <div className='container'>
 
             <button
                 className='btn'
-                onClick={() => setCount(count + 1)}
+                onClick={() => setCountT(countT + 1)}
             >+</button>
             <div className='display'>
-                {count}
+                {countT}
             </div>
             <button
                 className='btn'
-                onClick={() => setCount(count - 1)}>-</button>
+                onClick={() => setCountT(countT - 1)}>-</button>
 
         </div>
     )
