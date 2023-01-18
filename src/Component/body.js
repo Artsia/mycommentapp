@@ -12,42 +12,11 @@ import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
 // eslint-disable-next-line 
 import Button from '@mui/material/Button';
-// eslint-disable-next-line 
-import Input from "@mui/material/Input";
-
-
 
 function CreateCard() {
     const inputRef = useRef(null);
     const [comments, setComments] = useState([]);
-
     let [count, setCount] = useState(0);
-    const upDowntTextFieldRef = useRef(null);
-
-    /**reference for editCommentContainer div where I store Edited response */
-
-    const editCommentContainerUseRef = useRef(null);
-    
-
-    
-    // eslint-disable-next-line
-
-    const increaseCount = () => {
-        setCount(count, upDowntTextFieldRef.current.value);
-        upDowntTextFieldRef.current.value = count + 1;
-
-    }
-
-    const decreaseCount = () => {
-        /*if (upDowntTextFieldRef.current.value === 0) {
-            setCount(count, upDowntTextFieldRef.current.value);
-            upDowntTextFieldRef.current.value = count - 1;
-        }*/
-
-        setCount(count, upDowntTextFieldRef.current.value);
-        count = upDowntTextFieldRef.current.value;
-        upDowntTextFieldRef.current.value = count - 1;
-    }
 
     const addComment = () => {
         setComments([...comments, inputRef.current.value]);
@@ -63,6 +32,7 @@ function CreateCard() {
         const newComments = [...comments];
         newComments[index] = newText;
         setComments(newComments);
+
     }
 
 
@@ -77,18 +47,18 @@ function CreateCard() {
                         <button
                             className='btn'
                             variant="text"
-                            onClick={() => increaseCount()}
+                            onClick={() => setCount(count + 1)}
 
                         >
                             +
                         </button>
 
-                        <div className='display'>5</div>
+                        <div className='display'>{count}</div>
 
                         <button
                             className='btn'
                             variant="text"
-                            onClick={() => decreaseCount()}
+                            onClick={() => setCount(count - 1)}
 
                         >
                             -
@@ -120,6 +90,7 @@ function CreateCard() {
                                         onClick={() => removeComment(index)}>
                                         Delete
                                     </Button>
+                                    {/**implement the delete alert before deleting comment */}
                                 </div>
 
                                 <div className='edit-Container'>
@@ -128,19 +99,20 @@ function CreateCard() {
                                     <Button
                                         className='editBtn'
                                         variant="text"
-                                        onClick={() => editComment(index, prompt('New Comment'))}>
-                                        {/** onClick={() => editComment(index, editCommentContainerUseRef)}>  */}
+                                        onClick={
+                                            () => editComment(index, prompt("Enter Text"))
+                                        }>
+                                        {/** onClick={() => editComment(index, editCommentContainerUseRef)}>  prompt() */}
                                         Edit
                                     </Button>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="txtfield-container">
+                        <div className="txtfield-container" >
                             <TextField className="new-TextField"
                                 value={comment}
                                 variant="outlined"
-
                                 fullWidth
                                 InputProps={{
                                     readOnly: true
@@ -148,26 +120,26 @@ function CreateCard() {
                             />
                         </div>
 
-                        {/**display content when user clicks edit btn:here */}
+                        {/**display content when user clicks edit btn:here 
 
                         <div className="editCommentContainer" ref={editCommentContainerUseRef}>
 
-                        </div>
+                        </div>*/}
 
                     </div>
                 </div>
             ))}
 
-            <Card className="center-Wrapper">
+            <div className="center-Wrapper">
 
 
                 <R />
 
-                <C /> 
+                <C />
 
                 {/**put component design copy */}
 
-                <Card className="Wrapper">
+                <div className="Wrapper">
                     <Avatar
                         src=''
                         alt="avatar"
@@ -186,8 +158,8 @@ function CreateCard() {
                         onClick={addComment}>
                         SEND
                     </Button>
-                </Card>
-            </Card>
+                </div>
+            </div>
         </Card>
     )
 }

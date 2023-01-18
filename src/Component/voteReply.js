@@ -1,14 +1,18 @@
 import './vote.css';
+import React, { useState } from 'react';
 
-function VoteReplyFour(){
+function VoteReplyFour() {
+    const [count, setCount] = useState(4);
     return (
         <div className='voteContainer'>
 
-            <button className='btn'>+</button>
+            <button className='btn'
+                onClick={() => setCount(count + 1)}>+</button>
             <div className='display'>
-                4
+                {count}
             </div>
-            <button className='btn'>-</button>
+            <button className='btn'
+                onClick={() => setCount(count - 1)}>-</button>
 
         </div>
     )

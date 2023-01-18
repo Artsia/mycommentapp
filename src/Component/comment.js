@@ -1,4 +1,5 @@
 import { Avatar, TextField, Button } from '@mui/material';
+
 import './comment.css';
 import Vote from './vote';
 
@@ -8,6 +9,8 @@ everyone knows the newwest library/ framework. but the fundementals are what sta
 
 
 function Comment() {
+
+   
     return (
         <div className='three-Items-Container'>
 
