@@ -133,8 +133,10 @@ function CreateCard() {
             <div className="center-Wrapper">
 
 
-                <R />
+                <C />
 
+                <R />
+                
                 <C />
 
                 {/**put component design copy */}

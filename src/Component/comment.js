@@ -10,7 +10,7 @@ everyone knows the newwest library/ framework. but the fundementals are what sta
 
 function Comment() {
 
-   
+
     return (
         <div className='three-Items-Container'>
 
@@ -30,9 +30,9 @@ function Comment() {
                     <div className="flex">
 
                         <div className='del-Container'>
-                            <Avatar src="./images/icon-delete.svg"
+                            {/*<Avatar src="./images/icon-delete.svg"
                                 alt='delete icon'
-                            />
+                            />*/}
                             <Button
                                 className='delBtn'
                                 sx={{
@@ -42,7 +42,9 @@ function Comment() {
                         </div>
 
                         <div className='edit-Container'>
-                            <Avatar src='./images/icon-edit.svg' alt='edit icon' />
+                            {/*<Avatar src="./images/icon-delete.svg"
+                                alt='delete icon'
+                            />*/}
                             <Button className='editBtn'>Edit</Button>
                         </div>
 

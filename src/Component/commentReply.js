@@ -11,7 +11,7 @@ function ReplyContainer() {
     return (
         <div className='three-Items-Container'>
 
-            <VoteReplyFour 
+            <VoteReplyFour
 
             />
 
@@ -28,8 +28,14 @@ function ReplyContainer() {
 
                     <div className="flex">
 
+                        <div>
+                            
+                        </div>
+
                         <div className='reply-Container'>
-                            <Avatar src='./images/icon-edit.svg' alt='edit icon' />
+                            {/*<Avatar src="./images/icon-delete.svg"
+                                alt='delete icon'
+                            />*/}
                             <Button className='replyBtn'>Reply</Button>
                         </div>
 
